@@ -1,0 +1,27 @@
+.formConfigInput {
+    width: 50%;
+}
+.scrollingTable {
+    width: 100%;
+    overflow-y: auto;
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .formConfigInput {
+        width: 75%;
+    }
+}
+
+@media (min-width: 0px) and (max-width: 600px) {
+    .formConfigInput {
+        width: 100%;
+    }
+    .configButtonCollapse
+    {
+        width: 100%;
+    }
+}
+
+#comboBoxTHResultNumber{
+    width: 70px;
+}

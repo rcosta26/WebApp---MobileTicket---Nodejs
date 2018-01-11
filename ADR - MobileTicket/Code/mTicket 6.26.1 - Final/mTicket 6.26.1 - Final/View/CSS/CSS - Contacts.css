@@ -1,0 +1,40 @@
+.equipa {
+    margin-bottom: 20px;
+}
+
+.imgEquipa {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.imgSocial {
+    width: 40px;
+    margin-bottom: 20px;
+}
+
+.contacts{
+    margin-top:40px;
+}
+
+#formContacto{
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-bottom: 75px;
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+
+    .contacts{
+        text-align: center;
+    }
+
+    #formContacto{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+}
+
+textarea {
+   resize: none;
+}

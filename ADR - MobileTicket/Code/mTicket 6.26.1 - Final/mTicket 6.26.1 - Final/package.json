@@ -1,0 +1,30 @@
+{
+  "name": "mobileticket",
+  "version": "6.26.1",
+  "description": "MobileTicket",
+  "main": "Model/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ESMAD",
+    "PW2",
+    "P2",
+    "ADR",
+    "MTICKET"
+  ],
+  "author": "ADR",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.3",
+    "fs": "0.0.1-security",
+    "http": "0.0.0",
+    "mysql": "^2.13.0",
+    "nodemailer": "^4.0.1",
+    "path": "^0.12.7",
+    "request": "^2.81.0",
+    "uuid-token-generator": "^1.0.0"
+  }
+}

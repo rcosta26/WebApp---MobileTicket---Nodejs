@@ -1,0 +1,65 @@
+.softflow {
+            -webkit-appearance: button;
+            -webkit-border-radius: 5px;
+            /*-webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+            -webkit-padding-end: 20px;
+            -webkit-padding-start: 2px;*/
+            -webkit-user-select: none;
+            background-image: url(https://webitcloud.net/PW/1617/ADR/index/resources/downArrow.png);
+            background-position: 97% center;
+            background-repeat: no-repeat;
+            border: 1px solid #AAA;
+            color: #555;
+            font-size: inherit;
+            margin-top: 0px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            padding: 5px 10px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 90%;
+            height: 41px;
+        }
+
+        .adminConfig {
+            width: 90%;
+        }
+
+        .scrollingTable {
+            overflow-y: auto;
+        }
+
+        #divEditEmployee {
+            padding-left: 150px;
+            padding-right: 150px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .configAdminButton,
+        .configAdminInput {
+            width: 100%;
+        }
+
+        @media (min-width: 0px) and (max-width: 425px) {
+            .softflow {
+                width: 100%;
+            }
+            .adminConfig {
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 426px) and (max-width: 1250px) {
+            #divEditEmployee {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+        }
+
+        @media (min-width: 0px) and (max-width: 425px) {
+            #divEditEmployee {
+                padding-left: 0%;
+                padding-right: 0%;
+            }
+        }

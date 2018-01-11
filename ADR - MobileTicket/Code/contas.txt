@@ -1,0 +1,11 @@
+ADMIN
+email: admin@mticket.com
+pass: mobileadmin
+
+FUNCIONARIO 1:
+email: da@mticket.com
+pass: 123
+
+FUNCIONARIO 2:
+email: fi@mticket.com
+pass: 123

@@ -1,0 +1,80 @@
+<div class='col-sm-12' style='padding-bottom: 15px;'>
+    <h2>Configurações</h2>
+</div>
+
+<div class="col-sm-12" style="margin-bottom: 35px; margin-top:30px;">
+    <button id="btnDarkMode" class="w3-button w3-grey">Ligar Modo Noturno</button>
+</div>
+
+<div class="col-sm-12" style="margin-bottom: 35px; margin-top:30px;">
+    <div class="col-sm-3"><label>Tolerância de Senhas</label></div>
+    <div class="col-sm-9">
+        <input class="formInput w3-round" id="formTicketTolerance" type="number" min="1" max="99" value="3">
+    </div>
+    
+</div>
+
+<div class="col-sm-12">
+    <hr>
+    <p class="pStatus" id="pConfigError" style="color: red; font-weight: bold;"></p>
+    <p class="pStatus" id="pConfigSuccess" style="color: limegreen; font-weight: bold;"></p>
+</div>
+
+<div class="col-sm-12">
+
+    <button id="openCName" class="formLoginButton configButtonCollapse w3-button w3-hover-none" data-toggle="collapse" href="#collapseName"
+        style="text-align: left;">Modificar o Nome <span class="glyphicon glyphicon-menu-down"></span></button>
+
+    <form id="collapseName" class="panel-collapse collapse">
+        <label><b>Novo Nome</b></label><br>
+        <input class="w3-input w3-border w3-round formInput formConfigInput" id="formNovoNome" type="text" placeholder="Coloque o seu novo Nome"
+            name="cNewName" required>
+        <br>
+        <button id="formConfigNome" class="formLoginButton w3-button w3-blue">Modificar</button>
+    </form>
+
+
+</div>
+
+<div class="col-sm-12">
+
+    <button id="openCEmail" class="formLoginButton configButtonCollapse w3-button w3-hover-none" data-toggle="collapse" href="#collapseEmail"
+        style="text-align: left;">Modificar o Email <span class="glyphicon glyphicon-menu-down"></span></button>
+    <form id="collapseEmail" class="panel-collapse collapse">
+        <label><b>Email Atual</b></label><br>
+        <input class="w3-input w3-border w3-round formInput formConfigInput" id="formEmailAtual" type="email" placeholder="Coloque o seu Email atual"
+            name="cOldEmail" required>
+        <br>
+        <label><b>Email Novo</b></label><br>
+        <input class="w3-input w3-border w3-round formInput formConfigInput" id="formEmailNovo" type="email" placeholder="Coloque o seu Email novo"
+            name="cNewEmail" required>
+        <br>
+        <button id="formConfigEmail" class="formLoginButton w3-button w3-blue">Modificar</button>
+    </form>
+
+
+</div>
+
+<div class="col-sm-12">
+
+    <button id="openCPsw" class="formLoginButton configButtonCollapse w3-button w3-hover-none" data-toggle="collapse" href="#collapsePsw"
+        style="text-align: left;">Modificar a Password <span class="glyphicon glyphicon-menu-down"></span></button>
+
+    <form id="collapsePsw" class="panel-collapse collapse">
+        <label>Password Atual</label><br>
+        <input class="w3-input w3-border w3-round formInput formConfigInput" id="formPassAtual" type="password" placeholder="Coloque a sua password atual"
+            name="cOldPsw" required style="background: transparent;">
+        <br>
+        <label>Password Nova</label><br>
+        <input class="w3-input w3-border w3-round formInput formConfigInput" id="formPassNova" type="password" placeholder="Coloque a sua password nova"
+            name="cNewPsw" required>
+        <br>
+        <label>Repetir Password Nova</label><br>
+        <input class="w3-input w3-border w3-round formInput formConfigInput" id="formRepetirPassNova" type="password" placeholder="Repita a sua password nova"
+            name="cRNewPsw" required>
+        <br>
+        <button id="formConfigPassword" class="formLoginButton w3-button w3-blue">Modificar</button>
+    </form>
+
+
+</div>

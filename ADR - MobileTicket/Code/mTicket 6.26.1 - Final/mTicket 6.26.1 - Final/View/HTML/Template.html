@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MobileTicket</title>
+
+    <link rel="manifest" href="https://mticket.herokuapp.com/manifest">
+
+    <link rel="icon" href="https://webitcloud.net/PW/1617/ADR/index/resources/logoMT.png">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!--GOOGLE GEOMETRY-->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeWROnu5XQz3Deyq6DmILbB4tiRjBW_UQ&libraries=geometry"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/4.1.0/firebase.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <!--TEMPLATE-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-dark-grey.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://webitcloud.net/PW/1617/ADR/index/style/main.css">
+    <link rel="stylesheet" href="https://webitcloud.net/PW/1617/ADR/index/style/CSS - HomePage.css">
+    <link rel="stylesheet" href="https://webitcloud.net/PW/1617/ADR/index/style/CSS - About.css">
+    <link rel="stylesheet" href="https://webitcloud.net/PW/1617/ADR/index/style/CSS - Contacts.css">
+    <link rel="stylesheet" href="https://webitcloud.net/PW/1617/ADR/index/style/CSS - Config.css">
+    <link rel="stylesheet" href="https://webitcloud.net/PW/1617/ADR/index/style/CSS - TicketHistory.css">
+    <link rel="stylesheet" href="https://webitcloud.net/PW/1617/ADR/index/style/Admin/CSS - Config.css">
+
+    <script>
+        function enterHTTPS() {
+            if (location.protocol != 'https:') {
+                location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+                // console.log('https:' + window.location.href.substring(window.location.protocol.length))
+            }
+        }
+    </script>
+
+    <script src="https://webitcloud.net/PW/1617/ADR/index/script/main.js"></script>
+    <script src="https://webitcloud.net/PW/1617/ADR/index/script/googleLogin.js"></script>
+    <script src="https://webitcloud.net/PW/1617/ADR/index/script/Client/Script-HomePage.js"></script>
+    <script src="https://webitcloud.net/PW/1617/ADR/index/script/Employee/Script-HomePage.js"></script>
+    <script src="https://webitcloud.net/PW/1617/ADR/index/script/Admin/Script-HomePage.js"></script>
+    <script src="https://webitcloud.net/PW/1617/ADR/index/script/Script-About.js"></script>
+    <script src="https://webitcloud.net/PW/1617/ADR/index/script/Script-Config.js"></script>
+    <script src="https://webitcloud.net/PW/1617/ADR/index/script/Admin/Script-Config.js"></script>
+    <script src="https://webitcloud.net/PW/1617/ADR/index/script/Script-Contacts.js"></script>
+    <script src="https://webitcloud.net/PW/1617/ADR/index/script/Script-TicketHistory.js"></script>
+    <script src="https://webitcloud.net/PW/1617/ADR/index/script/mticket_api.js"></script>
+
+    
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+
+        <!--UPBAR-->
+        <div class="row  w3-bar w3-top w3-large w3-white w3-border-bottom main" id="upTab" style="z-index: 4;">
+
+
+
+        </div>
+        <!--FIM UPBAR-->
+
+        <hr>
+
+
+        <div class="row main" id="downTab">
+
+            <!--SIDEBAR-->
+            <div class="col-md-3 " id="sideBarDiv">
+                <nav id="sideBar" class="w3-bar-block w3-border-right w3-sidebar w3-white" style="z-index: 3;padding-top:20px; padding-bottom: 70px;">
+
+                    <!--UTILIZADOR-->
+                    <div class="w3-container w3-row">
+                        <div class="w3-col s4">
+                            <img src="https://webitcloud.net/PW/1617/ADR/index/resources/avatar.png" class="w3-circle w3-margin-right" style="width:46px">
+                        </div>
+                        <div class="w3-col s8 w3-bar">
+                            <span>Bem-vindo<br><strong><span id="sbClientName"></span></strong>
+                            </span>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <!--DASHBOARD-->
+
+                    <div class="w3-container">
+                        <h5>Painel</h5>
+                    </div>
+
+                    <div class="w3-bar-block">
+
+                        <a href="#" id="sbPaginaPrincipal" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>&nbsp; Página Principal</a>
+                        <a href="#" id="sbHistoricoSenhas" class="w3-bar-item w3-button w3-padding"><i class="fa fa-history fa-fw"></i>&nbsp; Histórico de Senhas</a>
+                        <a href="#" id="sbConfiguracoes" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>&nbsp; Configurações</a>
+                        <a href="#" id="sbSobre" class="w3-bar-item w3-button w3-padding"><i class="fa fa-book fa-fw"></i>&nbsp; Sobre</a>
+                        <a href="#" id="sbContactos" class="w3-bar-item w3-button w3-padding"><i class="fa fa-phone fa-fw"></i>&nbsp; Contactos</a>
+                        <a href="#" id="sbAjuda" class="w3-bar-item w3-button w3-padding"><i class="fa fa-info fa-fw"></i>&nbsp; Para começar</a>
+                        <hr>
+                        <a href="#" id="sbLogin" class="w3-bar-item w3-button w3-padding"><i class="fa fa-sign-in fa-fw"></i>&nbsp; Iniciar Sessão</a>
+                        <a href="#" id="sbLogout" class="w3-bar-item w3-button w3-padding hide"><i class="fa fa-sign-out fa-fw"></i>&nbsp; Terminar Sessão</a>
+                        <a href="#" id="sbRegister" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user-plus fa-fw"></i>&nbsp; Registar</a>
+                        <a href="#" id="sbLoginGPlus" class="w3-bar-item w3-button w3-padding" style="background-color: white; color: black;"><img src="https://webitcloud.net/PW/1617/ADR/index/resources/googleIcon.png" alt="" style="width: 17px; padding-bottom: 7px;">&nbsp;|
+                            Google Login</a>
+                    </div>
+
+
+
+
+
+                </nav>
+            </div>
+
+            <!--PAGINA-->
+            <div class="col-md-9 w3-animate-right" id="divPagina">
+
+
+            </div>
+        </div>
+
+
+        <!--INICIO MODAL LOGIN-->
+        <div id="loginModal" class="w3-modal" style="display: none;">
+            <div id="formModalLogin" method="POST" class="modal-content w3-animate-top">
+                <div>
+                    <center>
+                        <span class="close" title="Close Modal" onclick="document.getElementById('loginModal').style.display = 'none'">x</span>
+                        <br>
+                        <img class="w3-circle w3-middle" id="imgAvatar" src="https://webitcloud.net/PW/1617/ADR/index/resources/avatar.png" alt="Avatar">
+                        <br><br>
+
+                        <label><b>Email</b></label><br>
+                        <input class="w3-input w3-border w3-round formInput" id="emailLogin" type="email" placeholder="Coloque o seu Email" name="email"
+                            required>
+                        <br>
+                        <label><b>Password</b></label><br>
+                        <input class="w3-input w3-border w3-round formInput" id="passwordLogin" type="password" placeholder="Coloque a sua Password"
+                            name="psw" required="">
+                        <br>
+                        <a href="#" id="forgotPsw" class="w3-bar-item w3-button w3-padding">Esqueceu-se da sua palavra-passe?</a>
+                        <p class="erro" style="color: red;"></p>
+                        <button id="formLoginEnter" class="formLoginButton w3-button w3-blue">Iniciar Sessão</button>
+
+                        <button onclick="document.getElementById('loginModal').style.display = 'none'" class=" w3-button w3-gray formLoginButton">Cancelar</button>
+                    </center>
+
+                </div>
+
+            </div>
+        </div>
+        <!--FIM MODAL LOGIN-->
+
+        <!--INICIO MODAL REGISTO-->
+        <div id="registerModal" class="w3-modal" style="display: none;">
+            <div id="formModalRegisto" method="POST" class="modal-content w3-animate-top">
+                <div>
+                    <center>
+                        <span class="close" title="Close Modal" onclick="document.getElementById('registerModal').style.display = 'none'">x</span>
+                        <br>
+                        <img class="w3-circle w3-middle" id="imgAvatar" src="https://webitcloud.net/PW/1617/ADR/index/resources/avatar.png" alt="Avatar">
+                        <br><br>
+                        <label><b>Nome</b></label><br>
+                        <input class="w3-input w3-border w3-round formInput" id="nameRegister" type="text" placeholder="Coloque o seu Nome" name="name"
+                            required>
+                        <br>
+                        <label><b>Email</b></label><br>
+                        <input class="w3-input w3-border w3-round formInput" id="emailRegister" type="email" placeholder="Coloque o seu Email" name="email"
+                            required>
+                        <br>
+                        <label><b>Password</b></label><br>
+                        <input class="w3-input w3-border w3-round formInput" id="passwordRegister" type="password" placeholder="Coloque a sua Password"
+                            name="psw" required="">
+                        <br>
+                        <label><b>Repetir Password</b></label><br>
+                        <input class="w3-input w3-border w3-round formInput" id="passwordRepeatRegister" type="password" placeholder="Repetir Password"
+                            name="rpsw" required="">
+                        <br>
+                        <p class="erro" style="color: red;"></p>
+                        <button id="formRegisterEnter" class="formRegisterButton w3-button w3-blue">Registar</button>
+
+                        <button onclick="document.getElementById('registerModal').style.display='none'" class=" w3-button w3-gray formRegisterButton">Cancelar</button>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <!--FIM MODAL REGISTO-->
+
+        <!--INICIO MODAL INICIAL-->
+        <div id="initialModal" class="w3-modal" style="display: none;">
+
+            <div id="formInitialModal" class="modal-content w3-animate-top">
+                <span class="close closeModalInitial" title="Close Modal">x</span>
+                <h4 style="text-align: center; font-weight: bold">Faça o seu registo de uma forma fácil e rápida</h4>
+                <hr>
+
+                <div id="middleInitialModal" class="col-md-12" style="background-color: white; margin-bottom: 25px;">
+                    <div class="col-md-4" align="center" style="margin-bottom: 20px;">
+                        <p style="font-weight: bold"> Clique em Registar e preencha o formulário </p>
+                        <div>
+                            <img class="imgInitial" src="https://webitcloud.net/PW/1617/ADR/index/resources/ModalInicial/1.png">
+                        </div>
+
+                    </div>
+                    <div class="col-md-4" align="center" style="margin-bottom: 20px;">
+                        <p style=" font-weight: bold"> Escolha o serviço que pretende e a senha será retirada</p>
+
+                        <img class="imgInitial" src="https://webitcloud.net/PW/1617/ADR/index/resources/ModalInicial/2.png" alt="2">
+                    </div>
+                    <div class="col-md-4" align="center" style="margin-bottom: 20px;">
+                        <p style=" font-weight: bold"> Adicione ao seu ecrã principal para aceder mais rapidamente</p>
+                        <img class="imgInitial" src="https://webitcloud.net/PW/1617/ADR/index/resources/ModalInicial/3.png" alt="3">
+                    </div>
+
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <center>
+                        <button class="w3-button w3-blue closeModalInitial">Fechar</button>
+                    </center>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <!--FIM MODAL INICIAL-->
+
+        <!--INICIO RESET PSW-->
+        <div id="resetPswModal" class="w3-modal" style="display: none;">
+            <div id="formModalResetPsw" method="POST" class="modal-content w3-animate-top">
+                <div>
+                    <center>
+                        <span class="close" title="Close Modal" onclick="document.getElementById('resetPswModal').style.display = 'none'">x</span>
+                        <h3>Recuperar palavra-passe</h3>
+                        <br>
+                        <label><b>Email</b></label><br>
+                        <input class="w3-input w3-border w3-round formInput" id="resetPswEmail" type="email" placeholder="Coloque o seu Email" name="email"
+                            required>
+                        <br>
+                        <p id="errorResetPsw" style="color: red;"></p>
+                        <button id="formResetPswEnter" class="formRegisterButton w3-button w3-blue">Recuperar</button>
+
+                        <button onclick="document.getElementById('resetPswModal').style.display='none'" class=" w3-button w3-gray formRegisterButton">Cancelar</button>
+                    </center>
+
+                </div>
+
+            </div>
+        </div>
+        <!--FIM RESET PSW-->
+
+        <!--INICIO NOTIFICAÇÃO-->
+        <div id="notifyModal" class="w3-modal" style="display: none;">
+            <div id="formNotify" method="POST" class="modal-content w3-animate-top">
+                <div>
+                    <center>
+                        <span class="close" title="Close Modal" onclick="document.getElementById('notifyModal').style.display = 'none'">x</span>
+                        <h3>Notificações</h3>
+                        <br>
+                        <div id="divNotifications">
+
+                        </div>
+                        <br>
+                        <button onclick="document.getElementById('notifyModal').style.display='none'" class=" w3-button w3-blue formRegisterButton">Confirmar</button>
+                    </center>
+
+                </div>
+
+            </div>
+        </div>
+        <!--FIM NOTIFICAÇÃO-->
+
+    </div>
+
+</body>
+
+</html>

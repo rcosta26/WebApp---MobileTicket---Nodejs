@@ -1,0 +1,21 @@
+.numero {
+    font-size: 30px;
+}
+
+.plusG {
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.glyphicon-plus {
+    font-size: 20px;
+}
+
+.spanGlyph {
+    padding-left: 25px;
+}
+
+.close-padding-bottom {
+    padding-bottom: 0px!important;
+}

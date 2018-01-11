@@ -1,0 +1,54 @@
+<div class='col-sm-12' style='padding-bottom: 15px;'>
+    <h2>Histórico de Senhas</h2>
+</div>
+<div class="col-sm-12">
+    <h4 id="hsPage"></h4>
+    <div class="col-sm-12" style="margin-bottom: 20px;" id="thConfigDiv">
+        <div class="col-xl-12" id="divSelectServiceTh" style="margin-left: 15px;">
+            <label for="comboBoxTHServices">Serviço: </label>
+            <select id="comboBoxTHServices" class="softflow comboBoxConfig"></select>
+        </div>
+        <div class="col-xl-12">
+            <form class="col-sm-6 form-inline">
+                <label for="thInitialDate">Data inicial:</label>
+                <div class="form-group">
+                    <input class="w3-input w3-border w3-round formInput" type="date" id="thInitialDate">
+                </div>
+            </form>
+
+            <form class="col-sm-6 form-inline">
+                <label for="thFinalDate">Data final:</label>
+                <div class="form-group">
+                    <input class="w3-input w3-border w3-round formInput" type="date" id="thFinalDate">
+                </div>
+
+            </form>
+
+
+        </div>
+        <div class="col-xl-12" style="margin-top:50px; margin-left: 15px;">
+            <label for="comboBoxTHResultNumber">Nº resultados a apresentar:</label>
+            <select id="comboBoxTHResultNumber" class="softflow comboBoxConfig">
+                         <option value="10">10</option>
+                         <option value="25">25</option>
+                         <option value="50">50</option>
+                         <option value="100">100</option>
+                         <option value="200">200</option>
+                     </select>
+        </div>
+        <div class="col-xl-12" style="margin-left: 15px;">
+            <h5>Número total de resultados: <span id="thResultNumber"></span></h5>
+        </div>
+    </div>
+
+
+
+    <br>
+    <div class="scrollingTable" style="margin-bottom:50px;">
+        <table id="hsTable" class="w3-table w3-striped w3-white">
+
+
+        </table>
+    </div>
+
+</div>

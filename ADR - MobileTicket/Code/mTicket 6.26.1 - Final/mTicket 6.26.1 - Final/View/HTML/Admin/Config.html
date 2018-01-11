@@ -1,0 +1,219 @@
+<div class='col-sm-12' style='padding-bottom: 15px;'>
+    <h2>Configurações</h2>
+</div>
+
+<div class="col-sm-12" style="margin-bottom: 35px; margin-top:30px;">
+    <button id="btnDarkMode" class="w3-button w3-grey">Ligar Modo Noturno</button>
+</div>
+
+<!--RESTABELECER SENHAS-->
+<div class="col-sm-12" style="margin-bottom: 0px; margin-top:0px;">
+    <button class="w3-button w3-blue" id="btnCollapseResetTickets" data-toggle="collapse" href="#collapseResetTickets"><i class="fa fa-repeat" ></i> Restablecer senhas</button>
+    <div id="collapseResetTickets" class="col-sm-12 panel-collapse collapse">
+        <h4>Tem a certeza que deseja restablecer todas as senhas?</h4>
+        <div class="col-sm-6">
+            <div class="col-xs-6">
+                <center>
+                    <button id="btnResetTickets" class="w3-button w3-blue">Sim</button>
+                </center>
+            </div>
+            <div class="col-xs-6">
+                <center>
+                    <button data-toggle="collapse" href="#collapseResetTickets" class="w3-button w3-blue">Não</button>
+                </center>
+            </div>
+        </div>
+
+    </div>
+    <p class="pStatus" id="pAConfigResetTicketsSuccess" style="color: limegreen; font-weight: bold;"></p>
+</div>
+
+<!--SERVICOS-->
+<div class='col-sm-12' style='margin-bottom: 15px;'>
+    <br>
+    <hr>
+    <h3>Serviços</h3>
+    <p class="pStatus" id="pAConfigServiceError" style="color: red; font-weight: bold;"></p>
+    <p class="pStatus" id="pAConfigServiceSuccess" style="color: limegreen; font-weight: bold;"></p>
+</div>
+
+<div class="col-md-12">
+    <div class="col-sm-6">
+        <button id="openAAddService" class="configButtonCollapse w3-button w3-hover-none" data-toggle="collapse" href="#collapseAddService"
+            style="text-align: left;text-decoration: underline;">Adicionar Serviço <span class="glyphicon glyphicon-menu-down"></span></button>
+
+        <form id="collapseAddService" class="panel-collapse collapse">
+            <label><b>Nome do serviço</b></label><br>
+            <input class="w3-input w3-border w3-round formInput adminConfig" id="inputAddService" type="text" placeholder="Serviço a adicionar"
+                name="cAddService" required>
+            <br>
+            <button id="formAddService" class="formLoginButton w3-button w3-blue">Adicionar</button>
+        </form>
+    </div>
+    <div class="col-sm-6">
+        <button id="openARemoveService" class="configButtonCollapse w3-button w3-hover-none" data-toggle="collapse" href="#collapseRemoveService"
+            style="text-align: left;text-decoration: underline;">Remover Serviço <span class="glyphicon glyphicon-menu-down"></span></button>
+
+        <form id="collapseRemoveService" class="panel-collapse collapse">
+            <label><b>Nome do serviço</b></label><br>
+            <select id="adminConfigComboBoxRemoveService" class="softflow comboBoxConfig"></select>
+            <br>
+            <button id="formRemoveService" class="formLoginButton w3-button w3-blue">Remover</button>
+        </form>
+    </div>
+    <div class="col-sm-6">
+        <button id="openAModifyAvg" class="configButtonCollapse w3-button w3-hover-none" data-toggle="collapse" href="#collapseModifyAvg"
+            style="text-align: left;text-decoration: underline;">Modificar média de tempo de espera <span class="glyphicon glyphicon-menu-down"></span></button>
+
+        <form id="collapseModifyAvg" class="panel-collapse collapse">
+            <label><b>Nome do serviço</b></label><br>
+            <select id="adminConfigComboBoxModifyAvg" class="softflow comboBoxConfig"></select>
+            <label><b>Nova média</b></label><br>
+            <input class="w3-input w3-border w3-round formInput adminConfig" id="inputNewAvg" type="number" placeholder="(em minutos)"
+                name="cModifyAvg" required>
+            <br>
+            <button id="formModifyAvg" class="formLoginButton w3-button w3-blue">Modificar</button>
+        </form>
+    </div>
+</div>
+
+<!--FUNCIONARIOS-->
+
+<div class='col-sm-12' style='padding-bottom: 15px;'>
+    <hr>
+    <h3>Funcionários</h3>
+    <p class="pStatus" id="pAConfigEmployeeError" style="color: red; font-weight: bold;"></p>
+    <p class="pStatus" id="pAConfigEmployeeSuccess" style="color: limegreen; font-weight: bold;"></p>
+</div>
+
+<div class="col-md-12">
+
+    <div class="col-sm-12">
+        <button id="openAAddEmployee" class="configButtonCollapse w3-button w3-hover-none" data-toggle="collapse" href="#collapseAddEmployee"
+            style="text-align: left;text-decoration: underline;">Adicionar Funcionário <span class="glyphicon glyphicon-menu-down"></span></button>
+
+        <form id="collapseAddEmployee" class="panel-collapse collapse">
+            <label><b>Nome</b></label><br>
+            <input class="w3-input w3-border w3-round formInput adminConfig" id="inputAddEmployeeName" type="text" placeholder="Nome do funcionário"
+                name="cAddEmployee" required>
+            <br>
+            <label><b>Email</b></label><br>
+            <input class="w3-input w3-border w3-round formInput adminConfig" id="inputAddEmployeeEmail" type="text" placeholder="Email"
+                name="cAddEmployee" required>
+            <br>
+            <label><b>Password</b></label><br>
+            <input class="w3-input w3-border w3-round formInput adminConfig" id="inputAddEmployeePassword" type="password" placeholder="Password"
+                name="cAddEmployee" required>
+            <br>
+            <label><b>Serviço a associar</b></label><br>
+            <select id="adminConfigComboBoxAddEmployee" class="softflow comboBoxConfig"></select>
+            <br>
+            <button id="formAddEmployee" class="formLoginButton w3-button w3-blue">Adicionar</button>
+        </form>
+    </div>
+
+    <div class="col-sm-12">
+        <button id="openARemoveEmployee" class="configButtonCollapse w3-button w3-hover-none" data-toggle="collapse" href="#collapseRemoveEmployee"
+            style="text-align: left;text-decoration: underline;">Remover/Editar Funcionário <span class="glyphicon glyphicon-menu-down"></span></button>
+
+        <div id="collapseRemoveEmployee" class="panel-collapse collapse">
+            <div class="scrollingTable">
+                <table id="configEmployeeTable" class="w3-table w3-striped w3-white">
+
+                </table>
+            </div>
+
+            <br>
+            <div class="col-sm-12">
+                <div class="col-xs-6">
+                    <button disabled id="formRemoveEmployee" class="configAdminButton w3-button w3-blue">Remover</button>
+                </div>
+                <div class="col-xs-6">
+                    <button id="buttonCollapseEditEmployee" disabled class="configAdminButton w3-button w3-blue" data-toggle="collapse" href="#divEditEmployee">Editar</button>
+                </div>
+            </div>
+            <div id="divEditEmployee" class="col-sm-12 panel-collapse collapse">
+                <p>Preencha somente os campos que pretende editar!</p>
+                <div class="col-sm-12">
+                    <label><b>Nome</b></label><br>
+                    <input id="inputEditEmployeeName" class="w3-input w3-border w3-round formInput configAdminInput" type="text" name="name">
+                    <br>
+                </div>
+                <div class="col-sm-12">
+                    <label><b>Email</b></label><br>
+                    <input id="inputEditEmployeeEmail" class="w3-input w3-border w3-round formInput configAdminInput" type="email" name="email">
+                    <br>
+                </div>
+                <div class="col-sm-12">
+                    <label><b>Password</b></label><br>
+                    <input id="inputEditEmployeePassword" class="w3-input w3-border w3-round formInput configAdminInput" type="password" name="psw">
+                    <br>
+                </div>
+                <div class="col-sm-12">
+                    <label><b>Serviço</b></label><br>
+                    <select id="adminConfigComboBoxEditEmployee" class="softflow comboBoxConfig configAdminInput"></select>
+                </div>
+                <div class="col-sm-12">
+                    <p class="pStatus" id="pAEditEmployeeError" style="color: red; font-weight: bold;"></p>
+                    <button id="formEditEmployee" class="configAdminButton w3-button w3-blue">Confirmar</button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<!--EMPRESA-->
+
+<div class='col-sm-12' style='padding-bottom: 15px;'>
+    <hr>
+    <h3>Empresa</h3>
+    <p class="pStatus" id="pAConfigCompanyError" style="color: red; font-weight: bold;"></p>
+    <p class="pStatus" id="pAConfigCompanySuccess" style="color: limegreen; font-weight: bold;"></p>
+</div>
+
+<div class="col-md-12">
+
+    <div class="col-sm-12">
+        <button id="openACompanyGPS" class="configButtonCollapse w3-button w3-hover-none" data-toggle="collapse" href="#collapseCompanyGPS"
+            style="text-align: left;text-decoration: underline;">Coordenadas GPS <span class="glyphicon glyphicon-menu-down"></span></button>
+
+        <div id="collapseCompanyGPS" class="panel-collapse collapse">
+            <div class="col-sm-6">
+                <label><b>Latitude</b></label><br>
+                <input class="w3-input w3-border w3-round formInput adminConfig" id="inputCompanyGPSLat" type="text" placeholder="Latitude"
+                    name="cCompanyGPSLat" required>
+                <br>
+                <label><b>Longitude</b></label><br>
+                <input class="w3-input w3-border w3-round formInput adminConfig" id="inputCompanyGPSLon" type="text" placeholder="Longitude"
+                    name="cCompanyGPSLon" required>
+                <br>
+                <button id="formCompanyGPS" class="formLoginButton w3-button w3-blue">Modificar</button>
+            </div>
+            <div id="inputMap" class="col-sm-12" style="height: 400px;">
+
+            </div>
+            <div class="col-sm-6" style="margin-top: 20px;">
+                <button id="formCompanyCenterGPS" class="formLoginButton w3-button w3-blue">Minha localização</button>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="col-sm-6" style="margin-bottom: 50px;">
+        <button id="openModifyRange" class="configButtonCollapse w3-button w3-hover-none" data-toggle="collapse" href="#collapseModifyRange"
+            style="text-align: left;text-decoration: underline;">Modificar distância máxima <span class="glyphicon glyphicon-menu-down"></span></button>
+
+        <form id="collapseModifyRange" class="panel-collapse collapse">
+            <label><b>Distância</b></label><br>
+            <input class="w3-input w3-border w3-round formInput adminConfig" id="inputNewRange" type="number" placeholder="(em metros)"
+                name="cModifyRange" required>
+            <br>
+            <button id="formModifyRange" class="formLoginButton w3-button w3-blue">Modificar</button>
+        </form>
+    </div>
+
+
+</div>
